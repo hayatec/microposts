@@ -35,8 +35,9 @@ class UsersController < ApplicationController
   
   def update
     if @current_user.update(user_params)
-        flash[:success] = 'Your profile Updated'
-        redirect_to edit_user_path
+      flash[:success] = 'Your profile Updated'
+      @user= User.find(current_user.id)
+      render 'show'
     else
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit'

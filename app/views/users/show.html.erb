@@ -1,4 +1,18 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<!-- info-author  -->
+<div class="container-fluid>
+  <div class="row">
+    <h1>
+         <%= gravatar_for @user %>
+    </h1> 
+    <div id="img-responsive-overwrite">
+    </div>
+    <div class="table-responsive">
+      <table class="table">
+      <tr><th>name</th><td><%= @user.name %></td></tr>
+        <tr><th>email</th><td><%= @user.email %></td></tr>
+        <tr><th>area</th><td><%= @user.area %></td></tr>
+    </table>
+  </div>
+  </div><!--row -->
+</div><!-- container -->
+
