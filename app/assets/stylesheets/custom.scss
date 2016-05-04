@@ -181,7 +181,7 @@ aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
-  }
+  } 
 }
 
 span.picture {
@@ -189,4 +189,8 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+#user_list>li {
+    height: 100px;
 }

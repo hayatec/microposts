@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :following, :followers ]
   #before_action :user_params, only: [:edit, :update]
   before_action :user_params, only: [:update]
   
@@ -43,6 +43,19 @@ class UsersController < ApplicationController
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
     end
+  end
+  
+  def following
+    #@following = current_user.following_relationships
+    @following = current_user.following_users
+    #binding.pry
+    render 'following'
+  end
+  
+  def followers
+    #@followers = current_user.follower_relationships
+    @followers = current_user.follower_users
+    render 'followers'
   end
   
   private
