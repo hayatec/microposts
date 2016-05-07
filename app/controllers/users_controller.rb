@@ -48,10 +48,7 @@ class UsersController < ApplicationController
   def following
     @user = User.find(params[:user_id])
     @following = @user.following_users
-    #binding.pry
     #@following = current_user.following_relationships
-    #@following = current_user.following_users
-    #binding.pry
     render 'following'
   end
   
@@ -59,7 +56,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     @followers = @user.follower_users
     #@followers = current_user.follower_relationships
-    #@followers = current_user.follower_users
     render 'followers'
   end
   
