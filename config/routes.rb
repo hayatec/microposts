@@ -9,10 +9,15 @@ Rails.application.routes.draw do
     #resources :following, :followers
     get 'following' , to: 'users#following'
     get 'followers' , to: 'users#followers'
+    get 'page/:page', :action => :index, :on => :collection
   end
   
   resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts
+  
+  resources :microposts do
+     get 'page/:page', :action => :index, :on => :collection
+  end
+  
   resources :relationships, only: [:create, :destroy]
   
   #get 'following' , to: 'users#following'

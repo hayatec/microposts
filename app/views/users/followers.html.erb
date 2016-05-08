@@ -11,6 +11,7 @@
     <span>followers:<%= link_to @user.follower_users.count, user_followers_path(user_id:@user) %></span>
   </aside>
   <div class="col-md-8">
-     <%= render @followers %>
+    <%= render @followers %>
+    <%= paginate @followers %>
   </div>
 </div>
