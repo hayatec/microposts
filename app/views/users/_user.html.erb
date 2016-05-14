@@ -1,6 +1,10 @@
-<ul class="list-group col-md-4" id="user_list">
-    <li class="list-group-item">
-        <span><%= gravatar_for user %></span>
-        <span><%= link_to user.name, user_path(user) %></span>
-    </li>
-</ul>
+<aside class="col-md-4">
+    <section class="user_info">
+        <h1>
+            <%= gravatar_for user %>
+            <%= link_to user.name, user_path(user) %>
+        </h1>
+    </section>
+</aside>
+
+

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :logged_in_user, only: [:edit, :update, :following, :followers ]
+  before_action :logged_in_user, only: [:edit, :update, :following, :followers, :likes ]
   #before_action :user_params, only: [:edit, :update]
   before_action :user_params, only: [:update]
   
@@ -58,6 +58,13 @@ class UsersController < ApplicationController
     @followers = @user.follower_users.page(params[:page])
     #@followers = current_user.follower_relationships
     render 'followers'
+  end
+  
+  def likes
+    @user = User.find(params[:user_id])
+    @micropost = @user.likes_users.page(params[:page])
+    render 'likes/likes'
+    #render 'shared/feeds'
   end
   
   private

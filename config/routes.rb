@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     get 'following' , to: 'users#following'
     get 'followers' , to: 'users#followers'
     get 'page/:page', :action => :index, :on => :collection
+    get 'likes' , to: 'users#likes'
   end
   
   resources :sessions, only: [:new, :create, :destroy]
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   end
   
   resources :relationships, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
   
   #get 'following' , to: 'users#following'
   #get 'followers' , to: 'users#followers'

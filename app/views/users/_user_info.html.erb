@@ -7,4 +7,5 @@
     </section>
     <span>following:<%= link_to @user.following_users.count, user_following_path(user_id:@user) %></span>
     <span>followers:<%= link_to @user.follower_users.count, user_followers_path(user_id:@user) %></span>
+    <div>likes:<%= link_to @user.likes_relationships.count, user_likes_path(user_id:@user) %></div>
 </aside>

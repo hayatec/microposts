@@ -1,0 +1,2 @@
+$('#micropost<%= @micropost.id %>').html('<%= escape_javascript(render("like/like_btn", micropost: @micropost)) %>')
+$('#like').text('<%= current_user.like.count %>')
